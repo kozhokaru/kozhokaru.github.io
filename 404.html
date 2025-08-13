@@ -1,0 +1,28 @@
+---
+layout: default
+permalink: /404.html
+---
+
+<div class="error-page">
+  <h1>404</h1>
+  <p class="lead">Page not found</p>
+  <p>The page you're looking for doesn't exist. It might have been moved or deleted.</p>
+  <a href="{{ '/' | relative_url }}" class="more-link">← Return home</a>
+</div>
+
+<style>
+.error-page {
+  text-align: center;
+  padding: calc(var(--spacing-unit) * 4) 0;
+}
+
+.error-page h1 {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-unit);
+  color: var(--color-accent);
+}
+
+.error-page .lead {
+  margin-bottom: var(--spacing-unit);
+}
+</style>

@@ -1,0 +1,45 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
+<div class="about-content">
+  <p class="lead">
+    I'm a software engineer passionate about creating thoughtful, well-crafted digital experiences.
+  </p>
+
+  <h2>Philosophy</h2>
+  <p>
+    I believe in the power of simplicity and the beauty of functional design. My work is guided by principles borrowed from Scandinavian minimalism, Swiss typography, and German engineering precision. Every line of code should have a purpose, every design element should enhance the user experience.
+  </p>
+
+  <h2>Experience</h2>
+  <p>
+    With years of experience in full-stack development, I've worked on projects ranging from small startups to large-scale enterprise applications. My expertise spans modern web technologies, system architecture, and user interface design.
+  </p>
+
+  <h2>Current Focus</h2>
+  <ul class="minimal-list">
+    <li>Building performant, accessible web applications</li>
+    <li>Exploring the intersection of design and technology</li>
+    <li>Contributing to open-source projects</li>
+    <li>Writing about software engineering and design principles</li>
+  </ul>
+
+  <h2>Connect</h2>
+  <p>
+    I'm always interested in connecting with fellow developers, designers, and thinkers. Feel free to reach out:
+  </p>
+  <ul class="contact-list">
+    {% if site.email %}
+    <li><a href="mailto:{{ site.email }}">Email</a></li>
+    {% endif %}
+    {% if site.github_username %}
+    <li><a href="https://github.com/{{ site.github_username }}">GitHub</a></li>
+    {% endif %}
+    {% if site.twitter_username %}
+    <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+    {% endif %}
+  </ul>
+</div>

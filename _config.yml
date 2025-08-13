@@ -1,0 +1,74 @@
+# Jekyll configuration for GitHub Pages
+title: Your Name
+email: your-email@example.com
+description: >-
+  A minimalistic personal website combining Scandinavian simplicity 
+  with Swiss typography and German precision.
+baseurl: ""
+url: "https://yourusername.github.io"
+twitter_username: yourtwitter
+github_username: yourgithub
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Kramdown options
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+# SEO
+author:
+  name: Your Name
+  twitter: yourtwitter
+
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/yourtwitter
+    - https://github.com/yourgithub
+    - https://linkedin.com/in/yourlinkedin
+
+# Timezone
+timezone: America/New_York
