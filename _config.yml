@@ -1,19 +1,17 @@
 # Jekyll configuration for GitHub Pages
-title: Your Name
-email: your-email@example.com
+title: Lev Kozhokaru
 description: >-
-  A minimalistic personal website combining Scandinavian simplicity 
-  with Swiss typography and German precision.
+  Software Engineer specializing in AI-driven systems, test automation, 
+  and full-stack development with a focus on quality and innovation.
 baseurl: ""
-url: "https://yourusername.github.io"
-twitter_username: yourtwitter
-github_username: yourgithub
+url: "https://kozhokaru.github.io"
+github_username: kozhokaru
+linkedin_username: levkoz
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
@@ -34,7 +32,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Lev Kozhokaru"
 
 # Exclude from processing
 exclude:
@@ -60,15 +58,13 @@ kramdown:
 
 # SEO
 author:
-  name: Your Name
-  twitter: yourtwitter
+  name: Lev Kozhokaru
 
 social:
-  name: Your Name
+  name: Lev Kozhokaru
   links:
-    - https://twitter.com/yourtwitter
-    - https://github.com/yourgithub
-    - https://linkedin.com/in/yourlinkedin
+    - https://github.com/kozhokaru
+    - https://linkedin.com/in/levkoz
 
 # Timezone
 timezone: America/New_York

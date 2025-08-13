@@ -6,40 +6,115 @@ permalink: /about/
 
 <div class="about-content">
   <p class="lead">
-    I'm a software engineer passionate about creating thoughtful, well-crafted digital experiences.
+    I'm a Software Development Engineer in Test (SDET) specializing in AI-driven systems, test automation, and full-stack development with a relentless focus on quality and innovation.
   </p>
 
-  <h2>Philosophy</h2>
+  <h2>Professional Philosophy</h2>
   <p>
-    I believe in the power of simplicity and the beauty of functional design. My work is guided by principles borrowed from Scandinavian minimalism, Swiss typography, and German engineering precision. Every line of code should have a purpose, every design element should enhance the user experience.
+    I believe in building robust, scalable solutions that combine elegant design with engineering excellence. My approach merges the precision of test automation with the innovation of AI technologies, creating systems that not only work flawlessly but also provide intelligent insights and actionable data.
   </p>
 
-  <h2>Experience</h2>
+  <h2>Core Expertise</h2>
+  
+  <h3>AI & Machine Learning Integration</h3>
   <p>
-    With years of experience in full-stack development, I've worked on projects ranging from small startups to large-scale enterprise applications. My expertise spans modern web technologies, system architecture, and user interface design.
+    Extensive experience with Anthropic Claude, OpenAI GPT models, and custom orchestration frameworks. I've built AI-powered accessibility validation systems, intelligent project dashboards with integrated assistants, and the first company-wide AI Chat Assistant with RAG capabilities at Hogarth Worldwide.
   </p>
 
-  <h2>Current Focus</h2>
+  <h3>Test Automation & Quality Engineering</h3>
+  <p>
+    Expert in designing and implementing comprehensive testing frameworks from the ground up using Selenium, TestCafe, Appium, and custom solutions. My work spans functional integration tests, end-to-end automation, performance testing, and API validation across web, mobile, and backend systems.
+  </p>
+
+  <h3>Full-Stack Development</h3>
+  <p>
+    Proficient in JavaScript, Python, TypeScript, with experience in React, Next.js, and Flask. Strong DevOps background with CI/CD pipeline integration using Jenkins, Docker, Kubernetes, and AWS infrastructure.
+  </p>
+
+  <h2>Notable Achievements</h2>
   <ul class="minimal-list">
-    <li>Building performant, accessible web applications</li>
-    <li>Exploring the intersection of design and technology</li>
-    <li>Contributing to open-source projects</li>
-    <li>Writing about software engineering and design principles</li>
+    <li>Designed AI-driven Image Accessibility Testing System for comprehensive website auditing</li>
+    <li>Created AI-powered Project Status Dashboard that reduced manual reporting effort by 99%</li>
+    <li>Built Selenium Grid testing infrastructure on AWS EC2 with integrated monitoring</li>
+    <li>Developed company's first AI Chat Assistant with documentation RAG and image support</li>
+    <li>Led large-scale automation projects from design to delivery</li>
+  </ul>
+
+  <h2>Technical Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-category">
+      <h4>Languages</h4>
+      <p>JavaScript, Python, TypeScript, Java, Swift, SQL, Shell</p>
+    </div>
+    <div class="tech-category">
+      <h4>AI & LLMs</h4>
+      <p>Anthropic Claude, OpenAI GPT, LangChain, MCP servers, Custom orchestration</p>
+    </div>
+    <div class="tech-category">
+      <h4>Testing</h4>
+      <p>Selenium, TestCafe, Appium, XCUITest, Postman, Custom frameworks</p>
+    </div>
+    <div class="tech-category">
+      <h4>Infrastructure</h4>
+      <p>AWS EC2, Docker, Kubernetes, Jenkins, Git, PostgreSQL, Oracle</p>
+    </div>
+  </div>
+
+  <h2>Professional Journey</h2>
+  <p>
+    <strong>Software Development Engineer in Test</strong> at Hogarth Worldwide (2020 - Present)<br>
+    Leading AI-driven testing initiatives and building innovative automation solutions for enterprise-scale projects.
+  </p>
+  <p>
+    <strong>Software QA Engineer</strong> at Systems Integration Solutions (2020)<br>
+    Developed custom CLI tools and test frameworks for high-paced release cycles.
+  </p>
+  <p>
+    <strong>Software QA Engineer</strong> at Los Altos Software Testing House (2019 - 2020)<br>
+    Automated regression testing and performed comprehensive web/mobile application testing.
+  </p>
+
+  <h2>Education</h2>
+  <ul class="minimal-list">
+    <li>B.S. in Computer Science (coursework completed), IT Step Academy</li>
+    <li>M.S. in Finance (coursework completed), State University of Mykolaiv</li>
   </ul>
 
   <h2>Connect</h2>
   <p>
-    I'm always interested in connecting with fellow developers, designers, and thinkers. Feel free to reach out:
+    I'm always interested in discussing AI integration, test automation strategies, and innovative engineering solutions.
   </p>
   <ul class="contact-list">
-    {% if site.email %}
-    <li><a href="mailto:{{ site.email }}">Email</a></li>
-    {% endif %}
     {% if site.github_username %}
     <li><a href="https://github.com/{{ site.github_username }}">GitHub</a></li>
     {% endif %}
-    {% if site.twitter_username %}
-    <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+    {% if site.linkedin_username %}
+    <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a></li>
     {% endif %}
   </ul>
 </div>
+
+<style>
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-unit);
+  margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+.tech-category h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.tech-category p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.about-content h3 {
+  margin-top: calc(var(--spacing-unit) * 1.5);
+  color: var(--color-accent);
+}
+</style>
