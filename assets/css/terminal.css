@@ -394,6 +394,17 @@ body {
     border-top: 1px solid var(--border);
 }
 
+/* Global Input - Always visible at bottom of terminal */
+.terminal-input-section.global-input {
+    margin: 0;
+    padding: 1rem 2rem;
+    background: var(--bg-terminal);
+    border-top: 1px solid var(--border);
+    position: sticky;
+    bottom: 60px; /* Above footer */
+    z-index: 10;
+}
+
 .terminal-input-wrapper {
     display: flex;
     align-items: center;
@@ -771,6 +782,11 @@ body {
 
     .terminal-main {
         padding: 1rem;
+    }
+
+    .terminal-input-section.global-input {
+        padding: 1rem;
+        bottom: 50px; /* Adjust for mobile */
     }
 }
 
