@@ -1,48 +1,334 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lev Kozhokaru - Software Engineer, Dev Tools Creator, AI Integration Specialist">
+    <meta name="author" content="Lev Kozhokaru">
+    <title>LEV.KOZHOKARU.v2025 | Terminal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/terminal.css">
+    
+    <meta property="og:title" content="Lev Kozhokaru - Software Engineer">
+    <meta property="og:description" content="Software Engineer, Dev Tools Creator, AI Integration Specialist">
+    <meta property="og:url" content="https://kozhokaru.github.io">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <div class="terminal-bar">
+                <span class="terminal-title">[SYSTEM] LEV.KOZHOKARU.v2025</span>
+                <div class="terminal-controls">
+                    <span class="control minimize">_</span>
+                    <span class="control maximize">□</span>
+                    <span class="control close">×</span>
+                </div>
+            </div>
+            
+            <nav class="terminal-nav">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="menu-icon">[☰]</span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">> HOME</a></li>
+                    <li><a href="#about" class="nav-link">> ABOUT</a></li>
+                    <li><a href="#projects" class="nav-link">> PROJECTS</a></li>
+                    <li><a href="#blog" class="nav-link">> BLOG</a></li>
+                    <li><a href="#contact" class="nav-link">> CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<section class="hero">
-  <h1 class="hero-title">Hello, I'm {{ site.title }}</h1>
-  <p class="hero-subtitle">{{ site.description }}</p>
-</section>
+        <main class="terminal-main">
+            <section id="home" class="terminal-section active">
+                <div class="boot-sequence">
+                    <pre class="ascii-logo">
+╔═══════════════════════════════════════════════╗
+║  _     _______     __  _  _____  ______  _   _ ║
+║ | |   | ____\ \   / / | |/ / _ \|__  / || | | |║
+║ | |   |  _|  \ \ / /  | ' / | | | / /| |_| | |║
+║ | |___| |___  \ V /   | . \ |_| |/ /_|  _  | |║
+║ |_____|_____|  \_/    |_|\_\___/____|_| |_| |_|║
+╚═══════════════════════════════════════════════╝
+                    </pre>
+                    <div class="typing-container">
+                        <span class="prompt">$</span>
+                        <span class="typing-text" data-text="whoami"></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-output" id="output">
+                        <div class="output-line hidden">
+                            <span class="output-label">Name:</span> <span class="output-value">Lev Kozhokaru</span>
+                        </div>
+                        <div class="output-line hidden">
+                            <span class="output-label">Role:</span> <span class="output-value">Software Engineer</span>
+                        </div>
+                        <div class="output-line hidden">
+                            <span class="output-label">Focus:</span> <span class="output-value">Dev Tools | AI Integration | Applied AI</span>
+                        </div>
+                        <div class="output-line hidden">
+                            <span class="output-label">Status:</span> <span class="output-value status-active">ACTIVE</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="home-section">
-  <h2 class="section-title">Recent Thoughts</h2>
-  <div class="post-list">
-    {% for post in site.posts limit:5 %}
-    <article class="post-preview">
-      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
-        {{ post.date | date: "%B %-d, %Y" }}
-      </time>
-      <h3 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h3>
-      {% if post.excerpt %}
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-      {% endif %}
-    </article>
-    {% endfor %}
-  </div>
-  {% if site.posts.size > 5 %}
-  <a href="{{ '/blog' | relative_url }}" class="more-link">View all posts →</a>
-  {% endif %}
-</section>
+                <div class="quick-access">
+                    <h2 class="glitch" data-text="// QUICK ACCESS">// QUICK ACCESS</h2>
+                    <div class="button-grid">
+                        <button class="terminal-btn" data-action="about">
+                            <span class="btn-icon">[i]</span>
+                            <span>ABOUT.txt</span>
+                        </button>
+                        <button class="terminal-btn" data-action="projects">
+                            <span class="btn-icon">[►]</span>
+                            <span>PROJECTS.exe</span>
+                        </button>
+                        <button class="terminal-btn" data-action="blog">
+                            <span class="btn-icon">[≡]</span>
+                            <span>BLOG.log</span>
+                        </button>
+                        <button class="terminal-btn" data-action="contact">
+                            <span class="btn-icon">[@]</span>
+                            <span>CONTACT.sh</span>
+                        </button>
+                    </div>
+                </div>
 
-<section class="home-section">
-  <h2 class="section-title">Professional Highlights</h2>
-  <div class="highlights">
-    <div class="highlight">
-      <h3>AI-Driven Systems</h3>
-      <p>Building intelligent accessibility validation frameworks and smart analytics dashboards using Anthropic Claude, OpenAI, and custom orchestration frameworks.</p>
+                <div class="terminal-input-section">
+                    <label for="terminal-input" class="visually-hidden">Terminal Input</label>
+                    <div class="terminal-input-wrapper">
+                        <span class="prompt">$</span>
+                        <input type="text" id="terminal-input" class="terminal-input" placeholder="Type 'help' for commands..." autocomplete="off">
+                        <span class="input-cursor">_</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="terminal-section">
+                <h2 class="section-title">
+                    <span class="title-decorator">►</span> ABOUT.txt
+                </h2>
+                <div class="about-content">
+                    <pre class="about-text">
+<span class="comment">// Bio</span>
+<span class="keyword">const</span> <span class="variable">developer</span> = {
+    <span class="property">name</span>: <span class="string">"Lev Kozhokaru"</span>,
+    <span class="property">role</span>: <span class="string">"Software Engineer"</span>,
+    <span class="property">location</span>: <span class="string">"Sunnyvale, CA"</span>,
+    <span class="property">specialties</span>: [
+        <span class="string">"Building dev tools that don't suck"</span>,
+        <span class="string">"Making AI do actual useful work"</span>,
+        <span class="string">"Turning chaos into automated pipelines"</span>,
+        <span class="string">"Writing code that humans can read"</span>
+    ],
+    <span class="property">current</span>: <span class="string">"Crafting AI-powered dev tools @ Hogarth"</span>
+};
+
+<span class="comment">// Tech Stack</span>
+<span class="keyword">const</span> <span class="variable">stack</span> = {
+    <span class="property">languages</span>: [<span class="string">"JavaScript"</span>, <span class="string">"Python"</span>, <span class="string">"TypeScript"</span>],
+    <span class="property">ai</span>: [<span class="string">"Claude"</span>, <span class="string">"GPT"</span>, <span class="string">"Custom LLM Orchestration"</span>],
+    <span class="property">tools</span>: [<span class="string">"React"</span>, <span class="string">"Node.js"</span>, <span class="string">"Docker"</span>, <span class="string">"AWS"</span>]
+};
+                    </pre>
+                </div>
+                <div class="nav-hint">Press ESC or type 'home' to return</div>
+            </section>
+
+            <section id="projects" class="terminal-section">
+                <h2 class="section-title">
+                    <span class="title-decorator">►</span> PROJECTS.exe
+                </h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">[AI]</span>
+                            <h3>AI Accessibility Validator</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Image accessibility testing system using AI for semantic validation</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Claude API</span>
+                                <span class="tag">A11y</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="status">DEPLOYED</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">[📊]</span>
+                            <h3>Smart Analytics Dashboard</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>AI-powered dashboard with predictive insights and automated reporting</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">OpenAI</span>
+                                <span class="tag">D3.js</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="status">LIVE</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">[🤖]</span>
+                            <h3>RAG Chat Assistant</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Company-wide AI assistant with documentation retrieval</p>
+                            <div class="project-tags">
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">LangChain</span>
+                                <span class="tag">Vector DB</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="status">IN PRODUCTION</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">[⚡]</span>
+                            <h3>Test Automation Framework</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Scalable testing framework with parallel execution on AWS</p>
+                            <div class="project-tags">
+                                <span class="tag">Selenium</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Jenkins</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="status">RUNNING</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="nav-hint">Press ESC or type 'home' to return</div>
+            </section>
+
+            <section id="blog" class="terminal-section">
+                <h2 class="section-title">
+                    <span class="title-decorator">►</span> BLOG.log
+                </h2>
+                <div class="blog-entries">
+                    <article class="blog-entry">
+                        <time class="blog-date">[2024.03.10]</time>
+                        <h3 class="blog-title">
+                            <a href="#" class="blog-link">The Art of Readable Code</a>
+                        </h3>
+                        <p class="blog-excerpt">Code is read far more often than it's written...</p>
+                    </article>
+                    <article class="blog-entry">
+                        <time class="blog-date">[2024.02.20]</time>
+                        <h3 class="blog-title">
+                            <a href="#" class="blog-link">Building Performant Web Applications</a>
+                        </h3>
+                        <p class="blog-excerpt">Performance isn't a feature—it's the foundation...</p>
+                    </article>
+                    <article class="blog-entry">
+                        <time class="blog-date">[2024.01.15]</time>
+                        <h3 class="blog-title">
+                            <a href="#" class="blog-link">On Simplicity in Design</a>
+                        </h3>
+                        <p class="blog-excerpt">Exploring the profound impact of simplicity...</p>
+                    </article>
+                </div>
+                <div class="nav-hint">Press ESC or type 'home' to return</div>
+            </section>
+
+            <section id="contact" class="terminal-section">
+                <h2 class="section-title">
+                    <span class="title-decorator">►</span> CONTACT.sh
+                </h2>
+                <div class="contact-content">
+                    <pre class="contact-info">
+<span class="comment">#!/bin/bash</span>
+
+<span class="keyword">echo</span> <span class="string">"Establishing connection..."</span>
+
+<span class="variable">GITHUB</span>=<span class="string">"https://github.com/kozhokaru"</span>
+<span class="variable">LINKEDIN</span>=<span class="string">"https://linkedin.com/in/levkoz"</span>
+
+<span class="keyword">function</span> <span class="function">connect</span>() {
+    <span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span>
+        github)
+            <span class="keyword">open</span> <span class="variable">$GITHUB</span>
+            ;;
+        linkedin)
+            <span class="keyword">open</span> <span class="variable">$LINKEDIN</span>
+            ;;
+        *)
+            <span class="keyword">echo</span> <span class="string">"Usage: connect [github|linkedin]"</span>
+            ;;
+    <span class="keyword">esac</span>
+}
+
+<span class="comment"># Click links below to connect:</span>
+                    </pre>
+                    <div class="contact-links">
+                        <a href="https://github.com/kozhokaru" target="_blank" rel="noopener" class="contact-link">
+                            <span class="link-icon">[GH]</span> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/levkoz" target="_blank" rel="noopener" class="contact-link">
+                            <span class="link-icon">[IN]</span> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-hint">Press ESC or type 'home' to return</div>
+            </section>
+        </main>
+
+        <footer class="terminal-footer">
+            <div class="status-bar">
+                <span class="status-item">SYS: OK</span>
+                <span class="status-item">MEM: 42%</span>
+                <span class="status-item">CPU: 8%</span>
+                <span class="status-item time" id="clock">00:00:00</span>
+            </div>
+        </footer>
     </div>
-    <div class="highlight">
-      <h3>Test Automation Excellence</h3>
-      <p>Designing robust testing frameworks from the ground up, implementing end-to-end automation across web, mobile, API, and performance testing domains.</p>
-    </div>
-    <div class="highlight">
-      <h3>Full-Stack Development</h3>
-      <p>Experienced in JavaScript, Python, TypeScript, and modern frameworks like React and Next.js, with expertise in cloud infrastructure and CI/CD pipelines.</p>
-    </div>
-  </div>
-</section>
+
+    <canvas id="matrix-bg"></canvas>
+    
+    <script src="assets/js/terminal.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('ServiceWorker registered'))
+                    .catch(err => console.log('ServiceWorker registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>
