@@ -90,7 +90,7 @@ Available commands:
   help     - Show this help message
   ls       - List available sections
   cd       - Navigate to section (e.g., cd about)
-  clear    - Clear terminal output
+  clear    - Clear terminal output (also: cls, Ctrl+L)
   whoami   - Display user information
   skills   - Show technical skills
   contact  - Display contact information
@@ -111,9 +111,17 @@ Available commands:
                 return `Error: ${section}: No such directory`;
             },
             clear: () => {
-                const output = document.createElement('div');
-                output.innerHTML = '';
-                return '';
+                const output = document.getElementById('output');
+                if (output) {
+                    // Keep initial boot sequence output, only clear command outputs
+                    const commandOutputs = output.querySelectorAll('.terminal-output-line');
+                    commandOutputs.forEach(line => line.remove());
+                }
+                return ''; // Return empty string so no new line is added
+            },
+            cls: () => {
+                // Alias for Windows users
+                return commands.clear();
             },
             whoami: () => {
                 return 'Lev Kozhokaru - Software Engineer | Dev Tools Creator | AI Integration Specialist';
@@ -355,6 +363,16 @@ LinkedIn: https://linkedin.com/in/levkoz
                 e.preventDefault();
                 if (elements.terminalInput) {
                     elements.terminalInput.focus();
+                }
+            }
+
+            // Ctrl + L to clear terminal (standard terminal shortcut)
+            if (e.ctrlKey && e.key === 'l') {
+                e.preventDefault();
+                const output = document.getElementById('output');
+                if (output) {
+                    const commandOutputs = output.querySelectorAll('.terminal-output-line');
+                    commandOutputs.forEach(line => line.remove());
                 }
             }
 
