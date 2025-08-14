@@ -195,14 +195,14 @@ LinkedIn: https://linkedin.com/in/levkoz
 
     // Display Output
     function displayOutput(text) {
-        const outputDiv = document.createElement('div');
-        outputDiv.className = 'terminal-output-line';
-        outputDiv.style.cssText = 'color: var(--text-primary); margin: 0.5rem 0; font-family: var(--font-mono);';
-        outputDiv.textContent = text;
+        const outputPre = document.createElement('pre');
+        outputPre.className = 'terminal-output-line';
+        outputPre.style.cssText = 'color: var(--text-primary); margin: 0.5rem 0; font-family: var(--font-mono); white-space: pre-wrap; word-wrap: break-word;';
+        outputPre.textContent = text;
         
         const outputContainer = document.getElementById('output');
         if (outputContainer) {
-            outputContainer.appendChild(outputDiv);
+            outputContainer.appendChild(outputPre);
             outputContainer.scrollTop = outputContainer.scrollHeight;
         }
     }
