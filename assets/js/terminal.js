@@ -482,6 +482,147 @@ LinkedIn: https://linkedin.com/in/levkoz
         }, 10000);
     }
 
+    // Blog Post Data
+    const blogPosts = {
+        'readable-code': {
+            title: 'The Art of Readable Code',
+            date: '2024.03.10',
+            content: `
+<span class="comment">// Writing code that humans can understand</span>
+
+Code is read far more often than it's written. We spend 90% of our time reading code 
+and only 10% writing it. Yet we optimize for the 10%.
+
+<span class="keyword">Key Principles:</span>
+• <span class="string">Naming:</span> Use clear, descriptive names that reveal intent
+• <span class="string">Functions:</span> Each function should do one thing, do it well, and do it only
+• <span class="string">Comments:</span> Explain WHY, not WHAT - the code should explain what
+• <span class="string">Structure:</span> Use whitespace and organization to create visual hierarchy
+
+<span class="keyword">Example:</span>
+<span class="comment">// Bad - unclear naming, does too much</span>
+function calc(x, y) {
+    return x * 0.1 + y * 0.05;
+}
+
+<span class="comment">// Good - clear intent, single responsibility</span>
+function calculateTotalTax(stateTax, federalTax) {
+    const STATE_TAX_RATE = 0.1;
+    const FEDERAL_TAX_RATE = 0.05;
+    return stateTax * STATE_TAX_RATE + federalTax * FEDERAL_TAX_RATE;
+}
+
+Remember: Code is communication between developers across time.
+Your future self is a different developer. Write for them.
+            `.trim()
+        },
+        'performant-web': {
+            title: 'Building Performant Web Applications',
+            date: '2024.02.20',
+            content: `
+<span class="comment">// Performance as a foundation, not an afterthought</span>
+
+Performance isn't a feature—it's the foundation upon which great user experiences are built.
+A 100ms delay can reduce conversion rates by 7%.
+
+<span class="keyword">Performance Budget:</span>
+• Time to Interactive: < 3 seconds on 3G
+• First Contentful Paint: < 1 second
+• JavaScript bundle: < 100KB gzipped
+• CSS: < 10KB
+• Lighthouse score: > 95
+
+<span class="keyword">Key Strategies:</span>
+1. <span class="string">Start with HTML:</span> Semantic, minimal, no JS required
+2. <span class="string">Progressive Enhancement:</span> Core functionality without JavaScript
+3. <span class="string">Optimize Images:</span> WebP, lazy loading, responsive images
+4. <span class="string">Cache First:</span> Service workers for instant repeat visits
+
+<span class="keyword">Code Example:</span>
+<span class="comment">// Lazy loading with Intersection Observer</span>
+if ('IntersectionObserver' in window) {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    images.forEach(img => imageObserver.observe(img));
+}
+
+Build fast by default. Optimize from the start. 
+Treat performance as a feature—because to your users, it absolutely is.
+            `.trim()
+        },
+        'simplicity-design': {
+            title: 'On Simplicity in Design',
+            date: '2024.01.15',
+            content: `
+<span class="comment">// The profound impact of simplicity in digital design</span>
+
+In an era of endless complexity and feature creep, the pursuit of simplicity 
+has become both a rebellion and a necessity.
+
+<span class="keyword">Learning from Masters:</span>
+• <span class="string">Scandinavian Design:</span> Functionality first, natural materials, light and space
+• <span class="string">Swiss Typography:</span> Grid systems, sans-serif clarity, objective photography
+• <span class="string">German Engineering:</span> Precision, reliability, documentation as design
+
+<span class="keyword">The Cost of Complexity:</span>
+Every additional feature increases cognitive load exponentially.
+The best designs recognize this and make deliberate choices.
+
+<span class="keyword">Practical Simplicity:</span>
+1. Understanding the core problem
+2. Progressive disclosure of complexity
+3. Sensible defaults for common cases
+4. Escape hatches for power users
+
+<span class="keyword">The Courage to Say No:</span>
+Perhaps the hardest part of pursuing simplicity is saying no.
+• No to the feature that 5% of users might want
+• No to the clever animation that adds 50KB
+• No to the framework that adds complexity
+
+Every "no" is actually a "yes" to focus, performance, and user experience.
+
+<span class="comment">// Simplicity isn't minimalism for its own sake</span>
+<span class="comment">// It's about respecting both the user's time and intelligence</span>
+            `.trim()
+        }
+    };
+
+    // Toggle Blog Post Function
+    window.toggleBlogPost = function(postId) {
+        const entry = document.querySelector(`[data-post="${postId}"]`);
+        const content = entry.querySelector('.blog-content');
+        const excerpt = entry.querySelector('.blog-excerpt');
+        
+        if (content.classList.contains('expanded')) {
+            // Collapse
+            content.classList.remove('expanded');
+            content.classList.add('collapsed');
+            content.innerHTML = '';
+            excerpt.style.display = 'block';
+        } else {
+            // Expand
+            content.classList.remove('collapsed');
+            content.classList.add('expanded');
+            content.innerHTML = `<pre class="blog-post-content">${blogPosts[postId].content}</pre>
+                                <div class="blog-post-footer">
+                                    <span class="blog-hint">[Click title to collapse]</span>
+                                </div>`;
+            excerpt.style.display = 'none';
+            
+            // Scroll to post
+            entry.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    };
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
