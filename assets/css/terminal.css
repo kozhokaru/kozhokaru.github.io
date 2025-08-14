@@ -701,7 +701,7 @@ body {
     display: inline-block;
 }
 
-.blog-entry[data-post] .blog-content.expanded ~ .blog-title .blog-link::after {
+.blog-entry.expanded .blog-link::after {
     transform: rotate(180deg);
 }
 

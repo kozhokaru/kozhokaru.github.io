@@ -605,12 +605,14 @@ Every "no" is actually a "yes" to focus, performance, and user experience.
         
         if (content.classList.contains('expanded')) {
             // Collapse
+            entry.classList.remove('expanded');  // Remove expanded class from parent
             content.classList.remove('expanded');
             content.classList.add('collapsed');
             content.innerHTML = '';
             excerpt.style.display = 'block';
         } else {
             // Expand
+            entry.classList.add('expanded');  // Add expanded class to parent
             content.classList.remove('collapsed');
             content.classList.add('expanded');
             content.innerHTML = `<pre class="blog-post-content">${blogPosts[postId].content}</pre>
