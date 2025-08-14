@@ -220,13 +220,14 @@ LinkedIn: https://linkedin.com/in/levkoz
                 index++;
                 setTimeout(type, 100);
             } else {
+                // Wait a bit after typing completes before showing output
                 setTimeout(() => {
                     elements.outputLines.forEach((line, i) => {
                         setTimeout(() => {
                             line.classList.remove('hidden');
                         }, i * 500);
                     });
-                }, 500);
+                }, 200);  // Reduced from 500ms since CSS now handles the main delay
             }
         }
 
